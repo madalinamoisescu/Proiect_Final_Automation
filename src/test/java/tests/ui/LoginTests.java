@@ -1,6 +1,7 @@
 package tests.ui;
 
 import baseTest.BaseTest;
+import data.TestData;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -15,15 +16,11 @@ public class LoginTests extends BaseTest {
     public void successfulLoginTest() {
         // Scop: Verificarea faptului ca un utilizator se poate autentifica cu succes folosind credentiale valide.
         // Scenariu: Navigare la pagina de login -> Introducere credentiale valide -> Click pe butonul de login -> Verificare redirectionare catre dashboard.
-
-        String username = "Admin";
-        String password = "admin123";
-
         Reporter.log("[START] Incepe rularea testului: successfulLoginTest.");
         LoginPage loginPage = new LoginPage(driver);
 
-        Reporter.log("[STEP] Trimitere credentiale valide -> Username: " + username + " | Password: " + password);
-        loginPage.login(username, password);
+        Reporter.log("[STEP] Trimitere credentiale valide -> Username: " + TestData.USERNAME + " | Password: " + TestData.PASSWORD);
+        loginPage.login(TestData.USERNAME, TestData.PASSWORD);
 
         DashboardPage dashboardPage = new DashboardPage(driver);
         Reporter.log("[STEP] Verificare: daca dashboard este afisat in pagina.");
@@ -38,16 +35,14 @@ public class LoginTests extends BaseTest {
     public void invalidPasswordTest() {
         // Scop: Verificarea faptului ca procesul de login esueaza in mod controlat atunci cand se introduce o parola gresita.
         // Scenariu: Navigare la pagina de login -> Introducere username valid + parola gresita -> Click pe butonul de login -> Verificare afisare mesaj de eroare corespunzator.
-
-        String username = "Admin";
         String password = "parolagresita";
         String expectedErrorMessage = "Invalid credentials";
 
         Reporter.log("[START] Incepe rularea testului: invalidPasswordTest.");
         LoginPage loginPage = new LoginPage(driver);
 
-        Reporter.log("[STEP] Trimitere credentiale invalide -> Username: " + username + " | Password: " + password);
-        loginPage.login(username, password);
+        Reporter.log("[STEP] Trimitere credentiale invalide -> Username: " + TestData.USERNAME + " | Password: " + password);
+        loginPage.login(TestData.USERNAME, password);
 
         Reporter.log("[STEP] Verificare mesaj de eroare. Se asteapta textul: '" + expectedErrorMessage + "'");
         String actualErrorMessage = loginPage.getErrorMessage();

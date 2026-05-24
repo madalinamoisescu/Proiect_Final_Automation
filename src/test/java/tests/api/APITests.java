@@ -14,8 +14,8 @@ public class APITests {
 
     @Test(priority = 1)
     public void addNewPetTest() {
-        // Scop: Verificarea functionalitatii de adaugare a unui nou animal de companie (Pet) in sistem.
-        // Scenariu: Trimitere cerere POST cu un body JSON valid continand detaliile noului Pet -> Verificare status 200 si validare date salvate (ID, nume, status).
+        // Scop: Verificarea functionalitatii de adaugare a unui nou animal de companie (Pet) in sistem
+        // Scenariu: Trimitere cerere POST cu un body JSON valid continand detaliile noului Pet -> Verificare status 200 si validare date salvate (ID, nume, status)
 
         String customBody = "{\n" +
                 "  \"id\": " + petId + ",\n" +
@@ -53,8 +53,8 @@ public class APITests {
 
     @Test(priority = 2, dependsOnMethods = "addNewPetTest")
     public void getPetByIdTest() {
-        // Scop: Verificarea extragerii corecte a datelor unui Pet existent folosind ID-ul ca parametru de cale.
-        // Scenariu: Trimitere cerere GET catre endpoint-ul specific cu ID-ul setat in path -> Verificare status 200 si validare corectitudine date returnate.
+        // Scop: Verificarea extragerii corecte a datelor unui Pet existent folosind ID-ul ca parametru de cale
+        // Scenariu: Trimitere cerere GET catre endpoint-ul specific cu ID-ul setat in path -> Verificare status 200 si validare corectitudine date returnate
 
         Reporter.log("[START] Incepe rularea testului de API: getPetByIdTest.");
         Reporter.log("[STEP] Trimitere cerere GET pentru preluare Pet cu ID: " + petId);
@@ -74,8 +74,8 @@ public class APITests {
 
     @Test(priority = 3, dependsOnMethods = "getPetByIdTest")
     public void updatePetTest() {
-        // Scop: Verificarea functionalitatii de actualizare a informatiilor unui Pet existent.
-        // Scenariu: Trimitere cerere PUT cu datele modificate (schimbare nume din Rena in Mia) -> Verificare status 200 in raspunsul serverului.
+        // Scop: Verificarea functionalitatii de actualizare a informatiilor unui Pet existent
+        // Scenariu: Trimitere cerere PUT cu datele modificate (schimbare nume din Rena in Mia) -> Verificare status 200 in raspunsul serverului
 
         String customBody = "{\n" +
                 "  \"id\": " + petId + ",\n" +
@@ -110,8 +110,8 @@ public class APITests {
 
     @Test(priority = 4, dependsOnMethods = "updatePetTest")
     public void deletePetTest() {
-        // Scop: Verificarea stergerii definitive a unui Pet din baza de date a aplicatiei.
-        // Scenariu: Trimitere cerere DELETE folosind ID-ul obiectului creat -> Verificare raspuns cu status code 200.
+        // Scop: Verificarea stergerii definitive a unui Pet din baza de date a aplicatiei
+        // Scenariu: Trimitere cerere DELETE folosind ID-ul obiectului creat -> Verificare raspuns cu status code 200
 
         Reporter.log("[START] Incepe rularea testului de API: deletePetTest.");
         Reporter.log("[STEP] Trimitere cerere DELETE pentru eliminare Pet cu ID: " + petId);
@@ -123,6 +123,6 @@ public class APITests {
                 .then()
                 .statusCode(200);
 
-        Reporter.log("[SUCCESS] Testul deletePetTest s-a finalizat cu succes. Resursa a fost eliminata.");
+        Reporter.log("[SUCCESS] Testul deletePetTest s-a finalizat cu succes. Resursa a fost eliminata");
     }
 }
