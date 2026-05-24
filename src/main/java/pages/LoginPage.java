@@ -22,6 +22,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//p[contains(@class, 'oxd-alert-content-text')]")
     private WebElement errorMessage;
 
+    @FindBy(xpath = "//h5[text()='Login']")
+    private WebElement loginHeader;
+
     // constructor
     public LoginPage(WebDriver driver) {
        super(driver);
@@ -43,6 +46,10 @@ public class LoginPage extends BasePage {
 
     public void clickLogin() {
         loginButton.click();
+    }
+
+    public WebElement getLoginHeader() {
+        return waitUtils.waitForElementVisible(loginHeader);
     }
 
     public void login(String username, String password) {

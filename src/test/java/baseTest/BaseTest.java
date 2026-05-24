@@ -13,12 +13,19 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         driver = DriverFactory.getDriver();
+        driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("baseUrl"));
     }
 
     @AfterMethod
     public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
         DriverFactory.quitDriver();
+        driver = null;
+
     }
 
 }

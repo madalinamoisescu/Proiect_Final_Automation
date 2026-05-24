@@ -17,6 +17,9 @@ public class DashboardPage extends BasePage {
     @FindBy(xpath = "//span[text()='Recruitment']")
     private WebElement recruitmentMenu;
 
+    @FindBy(xpath = "//span[text()='Dashboard']")
+    private WebElement dashboardMenu;
+
     @FindBy(xpath = "//a[text()='Logout']")
     private WebElement logoutLink;
 
@@ -33,6 +36,10 @@ public class DashboardPage extends BasePage {
 
     public void navigateToRecruitment() {
         waitUtils.waitForElementVisible(recruitmentMenu).click();
+    }
+
+    public WebElement getDashboardHeader() {
+        return waitUtils.waitForElementVisible(dashboardMenu);
     }
 
     public void logout() {
