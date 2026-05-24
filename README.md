@@ -42,15 +42,19 @@ Toate comenzile se executa din terminal, pozitionat in directorul radacina al pr
 **Rularea intregii suite de teste (UI + API):**
 ```bash
 mvn clean test
+```
 
 **Rularea exclusiva a suitei pentru API:**
 ```bash
 mvn test -Dsurefire.suiteXmlFiles=src/main/resources/api-tests.xml
+```
 
 **Rularea exclusiva a suitei pentru UI:**
 ```bash
 mvn test -Dsurefire.suiteXmlFiles=src/main/resources/ui-tests.xml
+```
 
 **Vizualizarea Raportului Allure**
 ```bash
 allure serve allure-results
+```
