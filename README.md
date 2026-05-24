@@ -40,12 +40,15 @@ Pe parcursul dezvoltarii framework-ului, am implementat solutii stabile pentru c
 * `src/test/java/tests/api` -> Scenarii de testare pentru Backend (API)
 
 ## Teste UI
-* **LoginTests:** * Verifica autentificarea cu succes a utilizatorului folosind credentials valide si redirectionarea pe Dashboard.
+* **LoginTests:**
+  * Verifica autentificarea cu succes a utilizatorului folosind credentials valide si redirectionarea pe Dashboard.
   * Testeaza gestionarea erorilor in mod controlat la introducerea unei parole gresite.
   * Verifica procesul de delogare securizata si redirectionarea inapoi la pagina de login.
-* **PimTests:** * Testeaza adaugarea unui angajat nou in modulul PIM si incarcarea corecta a paginii de detalii personale.
+* **PimTests:**
+  * Testeaza adaugarea unui angajat nou in modulul PIM si incarcarea corecta a paginii de detalii personale.
   * Verifica functionalitatea de cautare si stergere definitiva a unui angajat din tabel pe baza ID-ului sau.
-* **RecruitmentTests:** * Verifica fluxul de adaugare a unui candidat nou in modulul de Recrutare si validarea trecerii in etapa curenta a aplicatiei (*Application Stage*).
+* **RecruitmentTests:**
+  * Verifica fluxul de adaugare a unui candidat nou in modulul de Recrutare si validarea trecerii in etapa curenta a aplicatiei (*Application Stage*).
 
 ## Teste API
 * **APITests (Flux Complet CRUD - Swagger Petstore):**
