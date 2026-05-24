@@ -34,6 +34,27 @@ Pe parcursul dezvoltarii framework-ului, am implementat solutii stabile pentru c
 * `allure-results/` -> Datele brute generate in timpul executiei, folosite pentru constructia raportului grafic.
 
 ---
+## Structura detaliata a testelor
+
+* `src/test/java/tests/ui` -> Scenarii de testare pentru Interfata Grafica (UI)
+* `src/test/java/tests/api` -> Scenarii de testare pentru Backend (API)
+
+## Teste UI
+* **LoginTests:** * Verifica autentificarea cu succes a utilizatorului folosind credentials valide si redirectionarea pe Dashboard.
+  * Testeaza gestionarea erorilor in mod controlat la introducerea unei parole gresite.
+  * Verifica procesul de delogare securizata si redirectionarea inapoi la pagina de login.
+* **PimTests:** * Testeaza adaugarea unui angajat nou in modulul PIM si incarcarea corecta a paginii de detalii personale.
+  * Verifica functionalitatea de cautare si stergere definitiva a unui angajat din tabel pe baza ID-ului sau.
+* **RecruitmentTests:** * Verifica fluxul de adaugare a unui candidat nou in modulul de Recrutare si validarea trecerii in etapa curenta a aplicatiei (*Application Stage*).
+
+## Teste API
+* **APITests (Flux Complet CRUD - Swagger Petstore):**
+  * **addNewPetTest (POST):** Scenariu Pozitiv. Trimite detaliile unui nou animal de companie in sistem si valideaza salvarea corecta (ID, nume, status disponibil) cu status 200 OK.
+  * **getPetByIdTest (GET):** Scenariu Pozitiv (depinde de crearea cu succes). Extrage datele animalului folosind ID-ul ca parametru de cale si verifica integritatea informatiilor returnate.
+  * **updatePetTest (PUT):** Scenariu Pozitiv. Modifica numele resursei existente in sistem si verifica daca serverul salveaza cu succes noile date.
+  * **deletePetTest (DELETE):** Scenariu Pozitiv. Sterge definitiv animalul de companie creat din baza de date si confirma eliminarea resursei.
+
+---
 
 ## Instructiuni de Rulare
 
