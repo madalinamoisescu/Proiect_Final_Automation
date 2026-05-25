@@ -33,6 +33,54 @@ Pe parcursul dezvoltarii framework-ului, am implementat solutii stabile pentru c
 * `screenshots/` -> Directorul local unde se salveaza capturile de ecran pe disc.
 * `allure-results/` -> Datele brute generate in timpul executiei, folosite pentru constructia raportului grafic.
 
+```text
+.
+├── README.md
+├── allure-results
+├── extent-reports
+├── pom.xml
+├── screenshots
+├── src
+│   ├── config
+│   │   └── config.properties
+│   ├── main
+│   │   ├── java
+│   │   │   ├── pages
+│   │   │   │   ├── BasePage.java
+│   │   │   │   ├── DashboardPage.java
+│   │   │   │   ├── LoginPage.java
+│   │   │   │   ├── PimPage.java
+│   │   │   │   └── RecruitmentPage.java
+│   │   │   └── utils
+│   │   │       ├── ConfigReader.java
+│   │   │       ├── DriverFactory.java
+│   │   │       ├── ExtentManager.java
+│   │   │       ├── ScreenshotUtils.java
+│   │   │       └── WaitUtils.java
+│   │   └── resources
+│   │       ├── api-tests.xml
+│   │       ├── testing-master.xml
+│   │       └── ui-tests.xml
+│   └── test
+│       └── java
+│           ├── baseTest
+│           │   └── BaseTest.java
+│           ├── data
+│           │   └── TestData.java
+│           ├── listeners
+│           │   ├── ExtentTestListener.java
+│           │   └── TestListener.java
+│           ├── testConfig
+│           │   └── PetstoreConfig.java
+│           └── tests
+│               ├── api
+│               │   └── APITests.java
+│               └── ui
+│                   ├── LoginTests.java
+│                   ├── PimTests.java
+│                   └── RecruitmentTests.java
+```
+
 ---
 ## Structura detaliata a testelor
 
